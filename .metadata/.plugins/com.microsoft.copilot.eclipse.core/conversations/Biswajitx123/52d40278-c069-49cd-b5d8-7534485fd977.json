@@ -1,0 +1,47 @@
+{
+  "conversationId": "52d40278-c069-49cd-b5d8-7534485fd977",
+  "title": "Debugging 404 Errors on Form Submission",
+  "requesterUsername": "Biswajitx123",
+  "responderUsername": "GitHub Copilot",
+  "turns": [
+    {
+      "message": {
+        "text": "why 404 error is coming on clicking submit"
+      },
+      "references": [],
+      "ignoredSkills": [],
+      "userLanguage": "en",
+      "source": "panel",
+      "model": "GPT-5 mini",
+      "chatMode": "Ask",
+      "needToolCallConfirmation": true,
+      "turnId": "db968733-d51e-43da-8fdd-5dd283cb16e7",
+      "role": "user",
+      "timestamp": "2025-12-19T16:47:55.776950Z"
+    },
+    {
+      "reply": {
+        "text": "Most likely causes and quick checks:\n\n\\- Check the browser DevTools Network tab: inspect the request URL, HTTP method, response body and status.  \n\\- Verify the form\u0027s `action` value is the correct path (use a leading slash for absolute: `action\u003d\"/submit\"`).  \n\\- Ensure the server has a route that matches that path and HTTP method (POST vs GET).  \n\\- Confirm the app\u0027s context/root path or reverse-proxy prefix (e.g., `http://host/app/`) and include it in the `action`.  \n\\- Make sure the backend server is running and listening on the expected port.  \n\\- Check server logs for \"route not found\" or stack traces.  \n\\- For SPAs, ensure API calls go to the backend API URL, not a client-side route.  \n\nHow to debug quickly:\n\n\\- Reproduce the request and copy the full request URL from DevTools, then run curl to see server response:  \n```bash\ncurl -v -X POST \u0027http://localhost:8080/submit\u0027 -d \u0027field\u003dvalue\u0027\n```  \n\\- Tail the server log while you click submit to see incoming requests and errors.\n\nCommon fixes (examples):\n\n1) HTML form correct action/method:\n```html\n\u003cform action\u003d\"/submit\" method\u003d\"post\"\u003e\n  \u003cinput name\u003d\"name\"\u003e\n  \u003cbutton type\u003d\"submit\"\u003eSubmit\u003c/button\u003e\n\u003c/form\u003e\n```\n\n2) Express (Node) route for POST:\n```javascript\nconst express \u003d require(\u0027express\u0027);\nconst app \u003d express();\napp.use(express.urlencoded({ extended: true }));\n\napp.post(\u0027/submit\u0027, (req, res) \u003d\u003e {\n  // handle form\n  res.send(\u0027ok\u0027);\n});\n\napp.listen(8080);\n```\n\n3) Flask route for POST:\n```python\nfrom flask import Flask, request\napp \u003d Flask(__name__)\n\n@app.route(\u0027/submit\u0027, methods\u003d[\u0027POST\u0027])\ndef submit():\n    data \u003d request.form\n    return \u0027ok\u0027\n```\n\nIf these checks don\u0027t resolve it, inspect the exact request URL from DevTools and the server log entry for that request; the mismatch between URL/method and server routes is almost always the cause.",
+        "annotations": [],
+        "references": [],
+        "hideText": false,
+        "notifications": [],
+        "followups": [],
+        "errorMessages": [],
+        "editAgentRounds": [],
+        "panelMessages": [],
+        "steps": [],
+        "agentMessages": [],
+        "data": {},
+        "modelName": "GPT-5 mini",
+        "billingMultiplier": 1.0
+      },
+      "suggestedTitle": "Debugging 404 Errors on Form Submission",
+      "turnId": "62af3285-b770-4fbd-9399-a6784b8d5191",
+      "role": "copilot",
+      "timestamp": "2025-12-19T16:48:00.096297Z"
+    }
+  ],
+  "creationDate": "2025-12-19T16:47:55.753608600Z",
+  "lastMessageDate": "2025-12-19T16:48:22.839994600Z"
+}

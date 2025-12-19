@@ -11,7 +11,7 @@
 		Name: <input type="text" name="name1"/> <br><br>
 		Email: <input type="text" name="email1"/> <br><br>
 		Password: <input type="password" name="pass1"/> <br><br>
-		Gender: <input type="radio" name="gender1"/> Male <input type="radio" name="gender1"> Female <br><br>
+		Gender: <input type="radio" name="gender1"/ value="Male"> Male <input type="radio" name="gender1" value="female"> Female <br><br>
 		City: <select name="city1">
 				<option>Select City<option/>
 				<option>Mumbai<option/>

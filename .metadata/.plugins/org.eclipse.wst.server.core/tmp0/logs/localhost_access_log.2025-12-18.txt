@@ -1,0 +1,8 @@
+127.0.0.1 - - [18/Dec/2025:01:29:45 +0530] "GET / HTTP/1.1" 404 755
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:29:46 +0530] "GET /RegisterLogi/register.jsp HTTP/1.1" 200 783
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:30:17 +0530] "POST /RegisterLogi/regForm HTTP/1.1" 405 756
+127.0.0.1 - - [18/Dec/2025:01:42:56 +0530] "GET / HTTP/1.1" 404 755
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:42:58 +0530] "GET /RegisterLogi/register.jsp HTTP/1.1" 200 782
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:43:36 +0530] "POST /RegisterLogi/regForm HTTP/1.1" 200 839
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:44:07 +0530] "GET /RegisterLogi/register.jsp HTTP/1.1" 200 783
+0:0:0:0:0:0:0:1 - - [18/Dec/2025:01:44:40 +0530] "POST /RegisterLogi/regForm HTTP/1.1" 200 840
