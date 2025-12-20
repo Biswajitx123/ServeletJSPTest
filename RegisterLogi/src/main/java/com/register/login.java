@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,7 +32,7 @@ public class login extends HttpServlet {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","c##bapu","123456");
 			
-			PreparedStatement ps = con.prepareStatement("select * from registerwhere email=? and password=?");
+			PreparedStatement ps = con.prepareStatement("select * from register where email=? and password=?");
 			ps.setString(1, myEmail);
 			ps.setString(2, myPass);
 			
