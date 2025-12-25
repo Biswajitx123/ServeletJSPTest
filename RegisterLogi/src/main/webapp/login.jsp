@@ -12,6 +12,5 @@
         Password: <input type="password" name="pass2"/> <br><br>
         <input type="submit" value="Login"/>
     </form>
-
 </body>
 </html>
